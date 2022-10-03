@@ -1,0 +1,433 @@
+{
+  "mons": [
+    {
+      "grama": [
+        {
+          "nome": "Bulbassauro",
+          "img": "/icons/g01.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Tank",
+          "damage_type": "Eclético",
+          "atk": 6,
+          "def": 6,
+          "spd": 4
+        },
+        {
+          "nome": "Chikorita",
+          "img": "/icons/g02.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Suporte",
+          "damage_type": "Eclético",
+          "atk": 5,
+          "def": 7,
+          "spd": 4
+        },
+        {
+          "nome": "Treecko",
+          "img": "/icons/g03.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Ágil",
+          "atk": 5,
+          "def": 4,
+          "spd": 7
+        },
+        {
+          "nome": "Turtwig",
+          "img": "/icons/g04.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Tank",
+          "damage_type": "Bruto",
+          "atk": 7,
+          "def": 6,
+          "spd": 3
+        },
+        {
+          "nome": "Snivy",
+          "img": "/icons/g05.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Suporte",
+          "damage_type": "Estrategista",
+          "atk": 4,
+          "def": 6,
+          "spd": 6
+        },
+        {
+          "nome": "Chespin",
+          "img": "/icons/g06.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Bruto",
+          "atk": 6,
+          "def": 7,
+          "spd": 3
+        },
+        {
+          "nome": "Rowlet",
+          "img": "/icons/g07.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Range",
+          "atk": 5,
+          "def": 6,
+          "spd": 5
+        },
+        {
+          "nome": "Grookey",
+          "img": "/icons/g08.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Eclético",
+          "atk": 6,
+          "def": 5,
+          "spd": 5
+        },
+        {
+          "nome": "Rowlet Hisui",
+          "img": "/icons/g07.gif",
+          "tipo": "Grama",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Estrategista",
+          "atk": 6,
+          "def": 5,
+          "spd": 5
+        }
+      ]
+    },
+    {
+      "fogo": [
+        {
+          "nome": "Charmander",
+          "img": "/icons/f01.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Range",
+          "atk": 6,
+          "def": 4,
+          "spd": 6
+        },
+        {
+          "nome": "Cyndaquil",
+          "img": "/icons/f02.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Estrategista",
+          "atk": 6,
+          "def": 4,
+          "spd": 6
+        },
+        {
+          "nome": "Torchic",
+          "img": "/icons/f03.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Eclético",
+          "atk": 7,
+          "def": 5,
+          "spd": 4
+        },
+        {
+          "nome": "Chimchar",
+          "img": "/icons/f04.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Bruto",
+          "atk": 5,
+          "def": 4,
+          "spd": 7
+        },
+        {
+          "nome": "Tepig",
+          "img": "/icons/f05.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Tank",
+          "damage_type": "Bruto",
+          "atk": 6,
+          "def": 6,
+          "spd": 4
+        },
+        {
+          "nome": "Fennekin",
+          "img": "/icons/f06.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Suporte",
+          "damage_type": "Eclético",
+          "atk": 6,
+          "def": 5,
+          "spd": 5
+        },
+        {
+          "nome": "Litten",
+          "img": "/icons/f07.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Bruto",
+          "atk": 6,
+          "def": 3,
+          "spd": 7
+        },
+        {
+          "nome": "Scorbunny",
+          "img": "/icons/f08.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Ágil",
+          "atk": 6,
+          "def": 3,
+          "spd": 7
+        },
+        {
+          "nome": "Cyndaquil Hisui",
+          "img": "/icons/f02.gif",
+          "tipo": "Fogo",
+          "desc": "",
+          "classe": "Suporte",
+          "damage_type": "Range",
+          "atk": 6,
+          "def": 6,
+          "spd": 4
+        }
+      ]
+    },
+    {
+      "agua": [
+        {
+          "nome": "Squirtle",
+          "img": "/icons/a01.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Tank",
+          "damage_type": "Range",
+          "atk": 5,
+          "def": 7,
+          "spd": 4
+        },
+        {
+          "nome": "Totodile",
+          "img": "/icons/a02.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Bruto",
+          "atk": 6,
+          "def": 6,
+          "spd": 4
+        },
+        {
+          "nome": "Mudkip",
+          "img": "/icons/a03.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Bruto",
+          "atk": 7,
+          "def": 5,
+          "spd": 4
+        },
+        {
+          "nome": "Piplup",
+          "img": "/icons/a04.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Tank",
+          "damage_type": "Eclético",
+          "atk": 6,
+          "def": 6,
+          "spd": 4
+        },
+        {
+          "nome": "Oshawott",
+          "img": "/icons/a05.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Estrategista",
+          "atk": 6,
+          "def": 5,
+          "spd": 5
+        },
+        {
+          "nome": "Froakie",
+          "img": "/icons/a06.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Ágil",
+          "atk": 5,
+          "def": 4,
+          "spd": 7
+        },
+        {
+          "nome": "Popplio",
+          "img": "/icons/a07.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Suporte",
+          "damage_type": "Eclético",
+          "atk": 6,
+          "def": 6,
+          "spd": 4
+        },
+        {
+          "nome": "Sobble",
+          "img": "/icons/a08.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Range",
+          "atk": 6,
+          "def": 4,
+          "spd": 6
+        },
+        {
+          "nome": "Oshawott Hisui",
+          "img": "/icons/a05.gif",
+          "tipo": "Água",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Ágil",
+          "atk": 5,
+          "def": 5,
+          "spd": 6
+        }
+      ]
+    },
+    {
+      "extra": [
+        {
+          "nome": "Pikachu",
+          "img": "/icons/Pikachu.gif",
+          "tipo": "Extra",
+          "desc": "",
+          "classe": "Protagonista",
+          "damage_type": "Ágil",
+          "atk": 5,
+          "def": 3,
+          "spd": 8
+        },
+        {
+          "nome": "Eevee",
+          "img": "/icons/Eevee.gif",
+          "tipo": "Extra",
+          "desc": "",
+          "classe": "Suporte",
+          "damage_type": "Estrategista",
+          "atk": 5,
+          "def": 6,
+          "spd": 5
+        },
+        {
+          "nome": "Absol",
+          "img": "/icons/Absol.gif",
+          "tipo": "Extra",
+          "desc": "",
+          "classe": "Atacante",
+          "damage_type": "Assassino",
+          "atk": 10,
+          "def": 2,
+          "spd": 4
+        }
+      ]
+    }
+  ],
+  "time": [
+    {
+      "id": 1,
+      "p1": {
+        "nome": "Cyndaquil Hisui",
+        "img": "/icons/f02.gif",
+        "tipo": "Fogo",
+        "desc": "",
+        "classe": "Suporte",
+        "damage_type": "Range",
+        "atk": 6,
+        "def": 6,
+        "spd": 4
+      }
+    },
+    {
+      "id": 2,
+      "p2": {
+        "nome": "Charmander",
+        "img": "/icons/f01.gif",
+        "tipo": "Fogo",
+        "desc": "",
+        "classe": "Atacante",
+        "damage_type": "Range",
+        "atk": 6,
+        "def": 4,
+        "spd": 6
+      }
+    },
+    {
+      "id": 3,
+      "p3": {
+        "nome": "Charmander",
+        "img": "/icons/f01.gif",
+        "tipo": "Fogo",
+        "desc": "",
+        "classe": "Atacante",
+        "damage_type": "Range",
+        "atk": 6,
+        "def": 4,
+        "spd": 6
+      }
+    }
+  ],
+  "bonus": [
+    {
+      "tipo": {
+        "Grama": 0,
+        "Fogo": 0,
+        "Água": 0
+      },
+      "id": 1
+    },
+    {
+      "classe": {
+        "Atacante": 0,
+        "Tank": 0,
+        "Suporte": 0
+      },
+      "id": 2
+    },
+    {
+      "damage_type": {
+        "Eclético": 0,
+        "Bruto": 0,
+        "Ágil": 0,
+        "Estrategista": 0,
+        "Range": 0
+      },
+      "id": 3
+    },
+    {
+      "extra": {
+        "vida_atual": 10,
+        "vida_max": 10,
+        "reg": 0,
+        "page": 4,
+        "fase": 1,
+        "vitorias": 6
+      },
+      "id": 4
+    }
+  ]
+}

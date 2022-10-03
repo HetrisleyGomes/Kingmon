@@ -1,0 +1,16 @@
+
+"nome":"",
+"img":"placeholder",
+"tipo":"",
+"desc":"",
+"damage_type": "",
+"class":"",
+"atk":0,
+"def":0,
+"spd":0
+
+<!-- Botões de batalha removidos -->
+<div class="d-flex justify-content-center position-absolute bottom-0 start-50 translate-middle-x m-3 p-3" id="botoes">
+    <input type="button" class="m-1 btn" value="Próximo turno" @click="oponentes()">
+    <input type="button" class="m-1 btn" value="comprao" @click="$emit('page2')">
+</div>
