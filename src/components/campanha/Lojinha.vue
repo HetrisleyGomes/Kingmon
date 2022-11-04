@@ -6,7 +6,7 @@
         </span>
         <div class="d-flex justify-content-evenly" style="left:auto; right: auto; margin:auto">
                 <div class="card">
-                    <img :src="grama.img" class="card-img-top" alt="..." style="width: 150px; left:auto; right: auto; margin:auto">
+                    <img :src="'/icons/' + grama.img" class="card-img-top" alt="..." style="width: 150px; left:auto; right: auto; margin:auto">
                     <div class="card-body">
                         <h4 class="card-title">{{ grama.nome }}</h4>
                         <h6 class="card-subtitle mb-2 text-muted"><strong>[{{ grama.tipo}}]</strong> - {{ grama.classe }} | {{ grama.damage_type }}</h6>
@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img :src="fogo.img" class="card-img-top" alt="..." style="width: 150px; left:auto; right: auto; margin:auto">
+                    <img :src="'/icons/' + fogo.img" class="card-img-top" alt="..." style="width: 150px; left:auto; right: auto; margin:auto">
                     <div class="card-body">
                         <h4 class="card-title">{{ fogo.nome }}</h4>
                         <h6 class="card-subtitle mb-2 text-muted"><strong>[{{ fogo.tipo}}]</strong> - {{ fogo.classe }} | {{ fogo.damage_type }}</h6>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <img :src="agua.img" class="card-img-top" alt="..." style="width: 150px; left:auto; right: auto; margin:auto">
+                    <img :src="'/icons/' + agua.img" class="card-img-top" alt="..." style="width: 150px; left:auto; right: auto; margin:auto">
                     <div class="card-body">
                         <h4 class="card-title">{{ agua.nome }}</h4>
                         <h6 class="card-subtitle mb-2 text-muted"><strong>[{{ agua.tipo}}]</strong> - {{ agua.classe }} | {{ agua.damage_type }}</h6>
@@ -60,9 +60,9 @@
                     <td style="width: 33%;"><h5>{{ p3.nome }}</h5></td>
                 </tr>
                 <tr>
-                    <td><img :src="p1.img" v-if="p1.img != 'placeholder'" alt="..." style="width: 100px; left:auto; right: auto; margin:-20px"></td>
-                    <td><img :src="p2.img" v-if="p2.img != 'placeholder'" alt="..." style="width: 100px; left:auto; right: auto; margin:-20px"></td>
-                    <td><img :src="p3.img" v-if="p3.img != 'placeholder'" alt="..." style="width: 100px; left:auto; right: auto; margin:-20px"></td>
+                    <td><img :src="'/icons/' + p1.img" v-if="p1.img != 'placeholder'" alt="..." style="width: 100px; left:auto; right: auto; margin:-20px"></td>
+                    <td><img :src="'/icons/' + p2.img" v-if="p2.img != 'placeholder'" alt="..." style="width: 100px; left:auto; right: auto; margin:-20px"></td>
+                    <td><img :src="'/icons/' + p3.img" v-if="p3.img != 'placeholder'" alt="..." style="width: 100px; left:auto; right: auto; margin:-20px"></td>
                 </tr>
                 <tr v-if="selected_grama == true || selected_fogo == true || selected_agua == true">
                     <td><input v-if="p1.img == 'placeholder'" type="button" @click="buyThis(1)" class="btn btn-info" value="Escolher"><input v-else type="button" @click="buyThis(1)" class="btn btn-info" value="Trocar"></td>
@@ -158,6 +158,7 @@ export default {
                 def:0,
                 spd:0
             },
+            idmin: 8,
         }
     }, props: {
         vitorias: Number
@@ -166,9 +167,7 @@ export default {
         async getMons(){
             const req = await fetch('http://localhost:3000/mons');
             const data = await req.json();
-            let a
-            if (this.vitorias == 0){a = 7} 
-            else {a = 8}
+            let a = this.idmin - 1;
             let b = (Math.random()*a).toFixed(0)
             let c = (Math.random()*a).toFixed(0)
             let d = (Math.random()*a).toFixed(0)
@@ -181,52 +180,29 @@ export default {
             const req = await fetch('http://localhost:3000/time');
             const data = await req.json();
 
-            this.p1 = data[0].p1
-            this.p2 = data[1].p2
-            this.p3 = data[2].p3
+            this.p1 = data[0].p
+            this.p2 = data[1].p
+            this.p3 = data[2].p
         }, async buyThis(a){
             var data;
-            if (a == 1){
-                if (this.selected_grama == true) {
-                    data = {"id": 1, "p1": this.grama}
-                }
-                if (this.selected_fogo == true) {
-                    data = {"id": 1, "p1": this.fogo}
-                }
-                if (this.selected_agua == true) {
-                    data = {"id": 1, "p1": this.agua}
-                }
-            } else if (a == 2){
-                if (this.selected_grama == true) {
-                    data = {"id": 2, "p2": this.grama}
-                }
-                if (this.selected_fogo == true) {
-                    data = {"id": 2, "p2": this.fogo}
-                }
-                if (this.selected_agua == true) {
-                    data = {"id": 2, "p2": this.agua}
-                }
-            } else if (a == 3){
-                if (this.selected_grama == true) {
-                    data = {"id": 3, "p3": this.grama}
-                }
-                if (this.selected_fogo == true) {
-                    data = {"id": 3, "p3": this.fogo}
-                }
-                if (this.selected_agua == true) {
-                    data = {"id": 3, "p3": this.agua}
-                }
+
+            if (this.selected_grama == true) {
+                data = {"p": this.grama}
+            }
+            if (this.selected_fogo == true) {
+                data = {"p": this.fogo}
+            }
+            if (this.selected_agua == true) {
+                data = {"p": this.agua}
             }
 
             const datajson = JSON.stringify(data);
-            const req = await fetch(`http://localhost:3000/time/${a}`,{
+            await fetch(`http://localhost:3000/time/${a}`,{
                 method: "PUT",
                 headers: {"content-type":"application/json"},
                 body: datajson
             })
 
-            const res = await req.json();
-            a = res
 
             this.getChars();
             this.selected_grama = false;
@@ -236,10 +212,18 @@ export default {
                 this.$emit('page3')
             },500)
             
+        }, checkmin(){
+            if(this.vitorias >= 1){
+                this.idmin = 9
+            }
+            if (this.vitorias >= 3){
+                this.idmin = 10
+            }
         }
         
     },
     mounted() {
+        this.checkmin()
         this.getMons();
         this.getChars();
     },

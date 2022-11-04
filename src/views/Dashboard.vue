@@ -1,17 +1,22 @@
 <template>
-  <div class="dashboard">
-    <Team />
+  <div style="overflow: hidden;">
+    <Preparar/>
   </div>
 </template>
   
 <script>
-import Team from '../components/campanha/Team.vue';
-  
+import Preparar from '../components/Preparar.vue'
   export default {
     name: 'Dashboard',
     components: {
-      Team
-  
-  }
+      Preparar
+    }
   }
 </script>
+
+<style scoped>
+div {
+  overflow: hidden;
+}
+
+</style>

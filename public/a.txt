@@ -14,3 +14,5 @@
     <input type="button" class="m-1 btn" value="Próximo turno" @click="oponentes()">
     <input type="button" class="m-1 btn" value="comprao" @click="$emit('page2')">
 </div>
+
+<div :class="[{'col-11': reg != 0}]"><progress :value="vida_atual" :max="vida_max" class="progress-bar w-100" style="border-radius: 10px;"></progress></div>
