@@ -1,9 +1,8 @@
 <template>
     <div style="overflow-x:hidden; user-select: none;">
         <div v-if="!esconder" class="container position-relative d-flex justify-content-center frente">
-
             <div class="card position-fixed " style="width: 80%; left:auto; right: auto; margin:auto">
-                <img :src="mon.img" class="card-img-top" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
+                <img :src="'/icons/' + mon.img" class="card-img-top" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
                 <div class="card-body">
                     <h5 class="card-title">{{ mon.nome }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted"><strong>[{{ mon.tipo }}]</strong> - {{ mon.classe }} | {{ mon.damage_type }}</h6>
@@ -18,12 +17,11 @@
             </div>
         </div>
         <div v-if="!esconder_escolher" class="container position-relative d-flex justify-content-center frente">
-
             <div class="card position-fixed " style="width: 80%; left:auto; right: auto; margin:auto">
                 <input type="hidden" value="{{item}}">
                 <div class="d-flex">
                     <div class="card-body" :class="{ imgempty: p1.img=='placeholder' } ">
-                        <img :src="p1.img" class="card-img-top" v-if="p1.img != 'placeholder'" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
+                        <img :src="'/icons/' + p1.img" class="card-img-top" v-if="p1.img != 'placeholder'" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
                         <h5 class="card-title">{{ p1.nome }}</h5>
                         <ul class="list-group m-3">
                             <li class="list-group-item">Ataque: {{ p1.atk }}</li>
@@ -34,7 +32,7 @@
                         <button class="btn btn-primary" v-else @click="escolherp1(mon)">Substituir</button>
                     </div>
                     <div class="card-body" :class="{ imgempty: p2.img=='placeholder' } ">
-                        <img :src="p2.img" class="card-img-top" v-if="p2.img != 'placeholder'" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
+                        <img :src="'/icons/' + p2.img" class="card-img-top" v-if="p2.img != 'placeholder'" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
                         <h5 class="card-title">{{ p2.nome }}</h5>
                         <ul class="list-group m-3">
                             <li class="list-group-item">Ataque: {{ p2.atk }}</li>
@@ -45,7 +43,7 @@
                         <button class="btn btn-primary" v-else @click="escolherp2(mon)">Substituir</button>
                     </div>
                     <div class="card-body" :class="{ imgempty: p3.img=='placeholder' } ">
-                        <img :src="p3.img" class="card-img-top" v-if="p3.img != 'placeholder'" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
+                        <img :src="'/icons/' + p3.img" class="card-img-top" v-if="p3.img != 'placeholder'" alt="..." style="width: 200px; left:auto; right: auto; margin:auto">
                         <h5 class="card-title">{{ p3.nome }}</h5>
                         <ul class="list-group m-3">
                             <li class="list-group-item">Ataque: {{ p3.atk }}</li>
@@ -62,27 +60,24 @@
         </div>
         <div class="row" :class="[{ bckgrnd: !esconder },{ bckgrnd: !esconder_escolher }]">
             <div class="col">
-                <div v-for="item in grama" :key="item.nome">
-                    <div class="row" v-if="vitorias == 0 && item.nome != 'Rowlet Hisui'"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-grama" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
-                    <div class="row" v-else-if="vitorias >= 1"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-grama" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
+                <div v-for="item in grama" :key="item.id">
+                    <div class="row" v-if="item.id <= idmin"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="'/icons/' + item.img"></span> <span class="col"><button type="button" class="btn-grama" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
                 </div>
             </div>
             <div class="col">
-                <div v-for="item in fogo" :key="item.nome">
-                    <div class="row" v-if="vitorias == 0 && item.nome != 'Cyndaquil Hisui'"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-fogo" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
-                    <div class="row" v-else-if="vitorias >= 1"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-fogo" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
+                <div v-for="item in fogo" :key="item.id">
+                    <div class="row" v-if="item.id <= idmin"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="'/icons/' + item.img"></span> <span class="col"><button type="button" class="btn-fogo" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
                 </div>
             </div>
             <div class="col">
-                <div v-for="item in agua" :key="item.nome">
-                    <div class="row" v-if="vitorias == 0 && item.nome != 'Oshawott Hisui'"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-agua" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
-                    <div class="row" v-else-if="vitorias >= 1"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-agua" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
+                <div v-for="item in agua" :key="item.id">
+                    <div class="row" v-if="item.id <= idmin"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="'/icons/' + item.img"></span> <span class="col"><button type="button" class="btn-agua" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
                 </div>
             </div>
         </div>
-        <div v-if="vitorias >= 5" class="row" :class="[{ bckgrnd: !esconder },{ bckgrnd: !esconder_escolher }]">
-            <div class="col" v-for="item in extras" :key="item.nome">
-                <div class="row"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="item.img"></span> <span class="col"><button type="button" class="btn-extras" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
+        <div v-if="vitorias >= 6" class="row" :class="[{ bckgrnd: !esconder },{ bckgrnd: !esconder_escolher }]">
+            <div class="col" v-for="item in extras" :key="item.id">
+                <div class="row"><span class="col"><strong>{{ item.nome }}</strong></span> <span class="col"><img :src="'/icons/' + item.img"></span> <span class="col"><button type="button" class="btn-extras" @click="escolher(item)">Escolher</button><br/><button type="button" class="btn-ver" @click="vermon(item)">Ver</button></span></div>
             </div>
         </div>
         
@@ -145,6 +140,7 @@ export default {
                 def:0,
                 spd:0
             },
+            idmin: 8,
         }
     }, props:{
         vitorias: Number,
@@ -168,9 +164,9 @@ export default {
             const req = await fetch('http://localhost:3000/time');
             const data = await req.json();
 
-            this.p1 = data[0].p1
-            this.p2 = data[1].p2
-            this.p3 = data[2].p3
+            this.p1 = data[0].p
+            this.p2 = data[1].p
+            this.p3 = data[2].p
         },
         escolher(item){
             this.esconder_escolher = false
@@ -201,11 +197,11 @@ export default {
             var data;
 
             if (a == 1){
-                data = {"id": a, "p1": this.p1}
+                data = {"id": a, "p": this.p1}
             } else if (a == 2){
-                data = {"id": a, "p2": this.p2}
+                data = {"id": a, "p": this.p2}
             } else if (a == 3){
-                data = {"id": a, "p3": this.p3}
+                data = {"id": a, "p": this.p3}
             }
 
             const datajson = JSON.stringify(data);
@@ -218,11 +214,20 @@ export default {
 
             const res = await req.json();
             a = res
+        },
+        checkmin(){
+            if(this.vitorias >= 1){
+                this.idmin = 9
+            }
+            if (this.vitorias >= 3){
+                this.idmin = 10
+            }
         }
     },
     mounted() {
         this.getMons();
         this.getChars();
+        this.checkmin();
     },
 }
 </script>

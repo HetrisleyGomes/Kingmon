@@ -541,81 +541,11 @@ export default {
 
             let lista = this.idmin
 
-            let a = this.fase
-            if (a <= 2){
-                let b = (Math.random()*2).toFixed(0)
-                let c = (Math.random()*lista).toFixed(0)
-                if (b == 0){
-                    this.op01.nome = data[0].grama[c].nome
-                    this.op01.img = data[0].grama[c].img
-                    this.op_atk_max += data[0].grama[c].atk
-                    this.op_def_max += data[0].grama[c].def
-                    this.op_spd_max += data[0].grama[c].spd
-                }
-                if (b == 1){
-                    this.op02.nome = data[1].fogo[c].nome
-                    this.op02.img = data[1].fogo[c].img
-                    this.op_atk_max += data[1].fogo[c].atk
-                    this.op_def_max += data[1].fogo[c].def
-                    this.op_spd_max += data[1].fogo[c].spd
-                }
-                if (b == 2){
-                    this.op03.nome = data[2].agua[c].nome
-                    this.op03.img = data[2].agua[c].img
-                    this.op_atk_max += data[2].agua[c].atk
-                    this.op_def_max += data[2].agua[c].def
-                    this.op_spd_max += data[2].agua[c].spd
-                }
-            } else
-            if (a <= 4){
-                let b = (Math.random()*2).toFixed(0)
-                let c = (Math.random()*lista).toFixed(0)
-                let d = (Math.random()*lista).toFixed(0)
-                if (b == 0){
-                    this.op01.nome = data[0].grama[c].nome
-                    this.op01.img = data[0].grama[c].img
-                    this.op02.nome = data[1].fogo[d].nome
-                    this.op02.img = data[1].fogo[d].img
-                    this.op_atk_max += data[0].grama[c].atk
-                    this.op_def_max += data[0].grama[c].def
-                    this.op_spd_max += data[0].grama[c].spd
-                    this.op_atk_max += data[1].fogo[d].atk
-                    this.op_def_max += data[1].fogo[d].def
-                    this.op_spd_max += data[1].fogo[d].spd
-                }
-                if (b == 1){
-                    this.op02.nome = data[1].fogo[c].nome
-                    this.op02.img = data[1].fogo[c].img
-                    this.op03.nome = data[2].agua[d].nome
-                    this.op03.img = data[2].agua[d].img
-                    this.op_atk_max += data[1].fogo[c].atk
-                    this.op_def_max += data[1].fogo[c].def
-                    this.op_spd_max += data[1].fogo[c].spd
-                    this.op_atk_max += data[2].agua[d].atk
-                    this.op_def_max += data[2].agua[d].def
-                    this.op_spd_max += data[2].agua[d].spd
-                }
-                if (b == 2){
-                    this.op03.nome = data[2].agua[c].nome
-                    this.op03.img = data[2].agua[c].img
-                    this.op01.nome = data[0].grama[d].nome
-                    this.op01.img = data[0].grama[d].img
-                    this.op_atk_max += data[2].agua[c].atk
-                    this.op_def_max += data[2].agua[c].def
-                    this.op_spd_max += data[2].agua[c].spd
-                    this.op_atk_max += data[0].grama[d].atk
-                    this.op_def_max += data[0].grama[d].def
-                    this.op_spd_max += data[0].grama[d].spd
-                }
-            } else
-            if (a <= 10){
+            let a = this.fase % 5
+            if (a <= 1){
                 let b = (Math.random()*lista).toFixed(0)
                 let c = (Math.random()*lista).toFixed(0)
                 let d = (Math.random()*lista).toFixed(0)
-                let r = (Math.random()*4).toFixed(0)
-                if (r >= 1){
-                    this.op_reg = 1
-                }
 
                 this.op01.nome = data[0].grama[b].nome
                 this.op01.img = data[0].grama[b].img
@@ -634,7 +564,7 @@ export default {
                 this.op_spd_max += data[2].agua[d].spd
 
             } else
-            if (a <= 14) {
+            if (a <= 2) {
                 let b = (Math.random()*lista).toFixed(0)
                 let c = (Math.random()*lista).toFixed(0)
                 let d = (Math.random()*lista).toFixed(0)
@@ -657,10 +587,11 @@ export default {
                 this.op_atk_max += 2
                 this.op_def_max += 2
                 this.op_spd_max += 2
-                this.op_vida_max += 3
-                this.op_vida_atual += 3
-                this.op_reg = 1
-            } else {
+                this.op_vida_max += 2
+                this.op_vida_atual += 2
+                this.op_reg = 2
+            } else
+            if (a <= 4) {
                 let b = (Math.random()*lista).toFixed(0)
                 let c = (Math.random()*lista).toFixed(0)
                 let d = (Math.random()*lista).toFixed(0)
@@ -681,13 +612,67 @@ export default {
                 this.op_def_max += data[2].agua[d].def
                 this.op_spd_max += data[2].agua[d].spd
                 this.op_atk_max += 3
-                this.op_def_max += 4
-                this.op_spd_max += 3
+                this.op_def_max += 3
+                this.op_spd_max += 2
                 this.op_vida_max += 5
                 this.op_vida_atual += 5
                 this.op_reg = 2
+            } else
+            if (a <= 6) {
+                let b = (Math.random()*lista).toFixed(0)
+                let c = (Math.random()*lista).toFixed(0)
+                let d = (Math.random()*lista).toFixed(0)
+
+                this.op01.nome = data[0].grama[b].nome
+                this.op01.img = data[0].grama[b].img
+                this.op02.nome = data[1].fogo[c].nome
+                this.op02.img = data[1].fogo[c].img
+                this.op03.nome = data[2].agua[d].nome
+                this.op03.img = data[2].agua[d].img
+                this.op_atk_max += data[0].grama[b].atk
+                this.op_def_max += data[0].grama[b].def
+                this.op_spd_max += data[0].grama[b].spd
+                this.op_atk_max += data[1].fogo[c].atk
+                this.op_def_max += data[1].fogo[c].def
+                this.op_spd_max += data[1].fogo[c].spd
+                this.op_atk_max += data[2].agua[d].atk
+                this.op_def_max += data[2].agua[d].def
+                this.op_spd_max += data[2].agua[d].spd
+                this.op_atk_max += 4
+                this.op_def_max += 4
+                this.op_spd_max += 3
+                this.op_vida_max += 8
+                this.op_vida_atual += 8
+                this.op_reg = 4
+            } else
+            if (a <= 8) {
+                let b = (Math.random()*lista).toFixed(0)
+                let c = (Math.random()*lista).toFixed(0)
+                let d = (Math.random()*lista).toFixed(0)
+
+                this.op01.nome = data[0].grama[b].nome
+                this.op01.img = data[0].grama[b].img
+                this.op02.nome = data[1].fogo[c].nome
+                this.op02.img = data[1].fogo[c].img
+                this.op03.nome = data[2].agua[d].nome
+                this.op03.img = data[2].agua[d].img
+                this.op_atk_max += data[0].grama[b].atk
+                this.op_def_max += data[0].grama[b].def
+                this.op_spd_max += data[0].grama[b].spd
+                this.op_atk_max += data[1].fogo[c].atk
+                this.op_def_max += data[1].fogo[c].def
+                this.op_spd_max += data[1].fogo[c].spd
+                this.op_atk_max += data[2].agua[d].atk
+                this.op_def_max += data[2].agua[d].def
+                this.op_spd_max += data[2].agua[d].spd
+                this.op_atk_max += 6
+                this.op_def_max += 6
+                this.op_spd_max += 5
+                this.op_vida_max += 10
+                this.op_vida_atual += 10
+                this.op_reg = 5
             }
-            if (this.tipo_veneno > 0 && this.op_reg > 0){
+            if (this.tipo_veneno > 0){
                 this.op_reg -= 0.5
             }
 
@@ -793,12 +778,12 @@ export default {
             this.op_atk_max = 0
             this.op_def_max = 0
             this.op_spd_max = 0
-            if (this.fase == 15){
+            if (this.fase == 50){
                 this.$emit('vitoria')
             } else {
                 this.$emit('fase1')
-                this.$emit('page2')
             }
+            setTimeout(()=>{this.oponentes()}, 2000)
         },
         derrota(){
             window.alert('Você PERDEU!')
@@ -809,7 +794,7 @@ export default {
         },
         regenerar(){
             if (this.dt_assassino > 0){
-                this.vida_atual += 0.5
+                this.vida_atual += 1
             }
             this.vida_atual += this.reg;
         }, op_regenerar(){
